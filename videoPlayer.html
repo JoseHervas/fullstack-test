@@ -1,0 +1,82 @@
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- video.js CSS -->
+  <link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <style type="text/css">
+    body { 
+      -webkit-transition: background 0.4s ease-in-out;
+      -moz-transition: background 0.2s ease-in-out;
+      -o-transition: background 0.2s ease-in-out;
+      transition: background 0.4s ease-in-out;
+    }
+
+
+  </style>
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
+    <a class="navbar-brand" href="#">Responsive video player</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse float-right" id="navbarTogglerDemo01">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <div class="container" style="padding-top: 5vh;">
+    <div class="videocontainer row h-50 xs-h-25">
+      <video id='my-video' class='video-js vjs-fill' controls autoplay muted style="height:100%">
+        <source src='http://vjs.zencdn.net/v/oceans.mp4' type='video/mp4'>
+        <p class='vjs-no-js'>
+          To view this video please enable JavaScript, and consider upgrading to a web browser that
+          <a href='https://videojs.com/html5-video-support/' target='_blank'>supports HTML5 video</a>
+        </p>
+      </video>
+    </div>
+    <div class="row" style="padding-top: 5vh;">
+      <div class="col"></div>
+      <div class="col text-center">
+        <button id="turnOff" type="button" class="btn btn-dark">Turn off the lights!</button>
+        <button style="display:none" id="turnOn" type="button" class="btn btn-light">Turn on the lights!</button>
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
+
+  <!-- video.js script -->
+  <script src='https://vjs.zencdn.net/7.4.1/video.js'></script>
+
+  <!-- bootstrap script -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#turnOff').click(function() {
+        $('body').css('background-color', '#666');
+        $('#turnOff').css('display', 'none');
+        $('#turnOn').css('display', '');
+      });
+      $('#turnOn').click(function() {
+        $('body').css('background-color', '#fff');
+        $('#turnOn').css('display', 'none');
+        $('#turnOff').css('display', '');
+      });
+    });
+  </script>
+
+</body>
